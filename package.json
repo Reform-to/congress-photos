@@ -1,0 +1,14 @@
+{
+  "name": "moc-photos",
+  "version": "0.0.0",
+  "description": "Official photos of members of Congress, as taken from the Congressional Pictorial Directory. The files are all named using the member’s Bioguide ID.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-fetch-pages": "~0.2.1",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}
