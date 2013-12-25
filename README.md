@@ -8,3 +8,18 @@ and the files are all named using the member’s Bioguide ID.
 * [Medium, 100x125](http://assets.sunlightfoundation.com/moc/100x125.zip)
 * [Large, 200x250](http://assets.sunlightfoundation.com/moc/200x250.zip)
 
+## Requirements
+
+* Node.js
+* Grunt - `npm install -g grunt-cli`
+
+## Installation
+
+  npm install
+
+## Deployment
+
+  grunt
+
+The photos will be built in the `dist/` directory, and can be deployed to
+a static server in production.
