@@ -2,29 +2,31 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    fetchpages: {
-      options: {
-        urls: [
-          { url: 'http://assets.sunlightfoundation.com/moc/40x50.zip', localFile: '40x50.zip' },
-          { url: 'http://assets.sunlightfoundation.com/moc/100x125.zip', localFile: '100x125.zip' },
-          { url: 'http://assets.sunlightfoundation.com/moc/200x250.zip', localFile: '200x250.zip' },
-        ],
-        filesBaseURL: 'http://assets.sunlightfoundation.com/moc/',
-        target: 'tmp/'
-      },
-      files: [
-      ]
+    curl: {
+      small: {
+        src: 'http://assets.sunlightfoundation.com/moc/40x50.zip',
+        dest: 'tmp/40x50.zip'
+      }
+    },
+
+    'unzip': {
+      small: {
+        src: 'tmp/40x50.zip',
+        dest: 'img'
+      }
     },
 
     clean: {
-        build: ['tmp']
+        tmp: ['tmp'],
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-fetch-pages');
+  grunt.loadNpmTasks('grunt-curl');
+  grunt.loadNpmTasks('grunt-zip');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('build', ['fetchpages']);
+  grunt.registerTask('build', ['curl', 'unzip', 'clean']);
   grunt.registerTask('default', ['build']);
+  grunt.registerTask('open', ['unzip']);
 }
