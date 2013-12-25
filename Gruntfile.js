@@ -64,5 +64,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('fetch', ['clean:tmp', 'curl', 'unzip']);
   grunt.registerTask('build', ['clean:dist', 'copy']);
+  grunt.registerTask('build:medium', ['clean:dist', 'copy:medium']);
   grunt.registerTask('default', ['fetch', 'build']);
 }
