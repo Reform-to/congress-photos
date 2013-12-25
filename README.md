@@ -15,9 +15,14 @@ and the files are all named using the member’s Bioguide ID.
 
 ## Installation
 
+Install the required NPM packages:
+
     npm install
 
 ## Deployment
+
+The task will download the zip files from sunlightfoundation.com, unzip them,
+and build them for distribution.
 
     grunt
 
