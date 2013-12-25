@@ -15,11 +15,11 @@ and the files are all named using the member’s Bioguide ID.
 
 ## Installation
 
-  npm install
+    npm install
 
 ## Deployment
 
-  grunt
+    grunt
 
 The photos will be built in the `dist/` directory, and can be deployed to
 a static server in production.
