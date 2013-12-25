@@ -1,6 +1,6 @@
 {
-  "name": "moc-photos",
-  "version": "0.0.0",
+  "name": "congress-photos",
+  "version": "0.0.1",
   "description": "Official photos of members of Congress, as taken from the Congressional Pictorial Directory. The files are all named using the member’s Bioguide ID.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
