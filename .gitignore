@@ -1,5 +1,6 @@
 tmp/
 dist/
+build/
 node_modules/
 
 # OS X
