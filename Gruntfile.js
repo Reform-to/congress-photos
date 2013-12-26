@@ -35,17 +35,17 @@ module.exports = function(grunt) {
     copy: {
       small: {
         files: [
-          { expand: true, cwd: 'tmp/src/', src: ['40x50/**'], dest: 'dist/' },
+          { expand: true, cwd: 'tmp/src/', src: ['40x50/*.jpg'], dest: 'dist/' },
         ]
       },
       medium: {
         files: [
-          { expand: true, cwd: 'tmp/src/', src: ['100x125/**'], dest: 'dist/' },
+          { expand: true, cwd: 'tmp/src/', src: ['100x125/*.jpg'], dest: 'dist/' },
         ]
       },
       large: {
         files: [
-          { expand: true, cwd: 'tmp/src/', src: ['200x250/**'], dest: 'dist/' },
+          { expand: true, cwd: 'tmp/src/', src: ['200x250/*.jpg'], dest: 'dist/' },
         ]
       },
     },
