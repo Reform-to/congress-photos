@@ -33,31 +33,27 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      small: {
+      source: {
         files: [
-          { expand: true, cwd: 'tmp/src/', src: ['40x50/*.jpg'], dest: 'dist/img' },
+          { expand: true, cwd: 'tmp/src/', src: ['**/*.jpg'], dest: 'tmp/result/img' }
         ]
       },
-      medium: {
+      dist: {
         files: [
-          { expand: true, cwd: 'tmp/src/', src: ['100x125/*.jpg'], dest: 'dist/img' },
-        ]
-      },
-      large: {
-        files: [
-          { expand: true, cwd: 'tmp/src/', src: ['200x250/*.jpg'], dest: 'dist/img' },
+          { expand: true, cwd: 'tmp/result/', src: ['**'], dest: 'dist' }
         ]
       },
       release: {
         files: [
           { expand: true, src: ['bower.json'], dest: 'build/release' },
-          { expand: true, cwd: 'dist/', src: ['img/**'], dest: 'build/release' }
+          { expand: true, cwd: 'tmp/result/', src: ['img/**'], dest: 'build/release' }
         ]
       }
     },
 
     clean: {
         tmp: ['tmp'],
+        build: ['tmp/result'],
         dist: ['dist'],
         release: ['build/release/img']
     }
@@ -70,8 +66,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('fetch', ['clean:tmp', 'curl', 'unzip']);
-  grunt.registerTask('build', ['clean:dist', 'copy:small', 'copy:medium', 'copy:large']);
-  grunt.registerTask('build:medium', ['clean:dist', 'copy:medium']);
+  grunt.registerTask('build', ['clean:dist', 'clean:build', 'copy:source', 'copy:dist']);
   grunt.registerTask('build:release', ['clean:release', 'copy:release']);
   grunt.registerTask('default', ['fetch', 'build']);
 }
