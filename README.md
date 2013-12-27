@@ -54,3 +54,15 @@ fetching and building:
     grunt release
 
 The package will be available in the `build/release` directory.
+
+### Black and White
+
+To make all the photos black and white, run the following commands:
+
+    grunt fetch
+    grunt build
+    ./Grayscale.sh
+    grunt dist
+
+The script requires you to have ImageMagick installed. Also check that the
+`Grayscale.sh` script is executable.
