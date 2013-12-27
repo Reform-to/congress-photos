@@ -19,7 +19,7 @@ Install the required NPM packages:
 
     npm install
 
-## Deployment
+## Usage
 
 The task will download the zip files from sunlightfoundation.com, unzip them,
 and build them for distribution.
@@ -29,11 +29,28 @@ and build them for distribution.
 The photos will be built in the `dist/` directory, and can be deployed to
 a static server in production.
 
-## Packaging
+### Details
 
-To package a release for Bower, first build and then release:
+If you just want to download the photos without building anything:
 
-    grunt
-    grunt build:release
+    grunt fetch
+
+You will find all of the image files in `tmp/src`.
+
+If you want to repeat the build process but skip downloading all the files,
+then run:
+
+    grunt build
+
+After building you can refresh the `dist/` directory:
+
+    grunt dist
+
+### Packaging
+
+To package a release for Bower instead, use the `release` task after
+fetching and building:
+
+    grunt release
 
 The package will be available in the `build/release` directory.

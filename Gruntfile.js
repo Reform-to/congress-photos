@@ -53,6 +53,7 @@ module.exports = function(grunt) {
 
     clean: {
         tmp: ['tmp'],
+        fetch: ['tmp/zip', 'tmp/src'],
         build: ['tmp/result'],
         dist: ['dist'],
         release: ['build/release/img']
@@ -65,9 +66,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('fetch', ['clean:tmp', 'curl', 'unzip']);
-  grunt.registerTask('build', ['clean:dist', 'clean:build', 'copy:source', 'copy:dist']);
-  grunt.registerTask('build:dist', ['clean:dist', 'copy:dist']);
-  grunt.registerTask('build:release', ['clean:release', 'copy:release']);
-  grunt.registerTask('default', ['fetch', 'build']);
+  grunt.registerTask('fetch', ['clean:fetch', 'curl', 'unzip']);
+  grunt.registerTask('build', ['clean:build', 'copy:source']);
+  grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
+  grunt.registerTask('release', ['clean:release', 'copy:release']);
+  grunt.registerTask('default', ['clean', 'fetch', 'build', 'dist']);
 }
