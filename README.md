@@ -28,3 +28,12 @@ and build them for distribution.
 
 The photos will be built in the `dist/` directory, and can be deployed to
 a static server in production.
+
+## Packaging
+
+To package a release for Bower, first build and then release:
+
+    grunt
+    grunt build:release
+
+The package will be available in the `build/release` directory.
